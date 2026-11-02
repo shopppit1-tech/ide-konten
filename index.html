@@ -22,7 +22,7 @@ button{border:0;border-radius:10px;padding:10px 14px;background:var(--purple);co
 .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.card{overflow:hidden;border:1px solid var(--line);border-radius:15px;background:var(--panel);display:flex;flex-direction:column}.photo{width:100%;height:165px;object-fit:cover;background:#263650}.cardbody{padding:13px;display:flex;flex-direction:column;flex:1}.cardtop{display:flex;justify-content:space-between;gap:8px;align-items:center}.num{font-size:11px;color:#b7adff;font-weight:800}.cat{font-size:10px;color:#a8f0dc;background:#17443b;padding:4px 7px;border-radius:20px}.card h3{font-size:16px;line-height:1.35;margin:12px 0 8px}.card p{font-size:12px;color:var(--muted);margin:0 0 13px}.card button{align-self:flex-start;margin-top:auto}
 .workflow{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.step{padding:14px;border:1px solid var(--line);background:var(--panel);border-radius:13px}.step strong{display:block;margin:5px 0}.step small{color:var(--muted)}.step .emoji{font-size:22px}
 .panel{border:1px solid var(--line);background:var(--panel);padding:17px;border-radius:14px}.panel pre{white-space:pre-wrap;word-break:break-word;background:#09111e;border-radius:10px;padding:13px;color:#dce7fa;font:13px/1.6 ui-monospace,monospace;max-height:520px;overflow:auto}
-.empty{display:none;text-align:center;border:1px dashed var(--line);padding:25px;border-radius:12px;color:var(--muted)}
+.platform-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:11px}.platform-links a{display:inline-flex;align-items:center;padding:8px 12px;border:1px solid #414f6e;background:#1a2840;color:#eaf0ff;border-radius:10px;text-decoration:none;font-size:13px;font-weight:700}.platform-links a:hover{border-color:var(--purple);background:#252d4d}.platform-note{margin:9px 0 0;color:var(--muted);font-size:12px}.empty{display:none;text-align:center;border:1px dashed var(--line);padding:25px;border-radius:12px;color:var(--muted)}
 footer{border-top:1px solid var(--line);padding:24px;text-align:center;color:var(--muted);font-size:12px}
 @media(max-width:800px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.workflow{grid-template-columns:repeat(2,1fr)}.bar{grid-template-columns:1fr 1fr}.bar input{grid-column:1/-1}}
 @media(max-width:520px){.grid{grid-template-columns:1fr 1fr;gap:9px}.photo{height:125px}.cardbody{padding:10px}.card h3{font-size:14px}.cat{font-size:9px}.bar{grid-template-columns:1fr}.bar input{grid-column:auto}.workflow{grid-template-columns:1fr 1fr}.stats{gap:6px}.stat{min-width:0;padding:9px 12px}}
@@ -52,11 +52,19 @@ footer{border-top:1px solid var(--line);padding:24px;text-align:center;color:var
 <div class="head"><div><h2>Prompt video</h2><div class="muted">Tekan “Buat prompt” di kartu, lalu salin prompt untuk dipakai di alat pilihanmu.</div></div></div>
 <div class="panel"><p id="selectedIdea">Pilih tombol “Buat prompt” pada salah satu kartu untuk membuat prompt video.</p>
 <pre id="prompt">Buat video vertikal 9:16 berdurasi sekitar 15 detik berdasarkan ide yang dipilih. Tambahkan voice-over/narasi yang terdengar dalam Bahasa Indonesia natural dengan aksen Indonesia; semua dialog dan subtitle juga wajib Bahasa Indonesia. Jangan gunakan bahasa Inggris. Jangan tampilkan wajah manusia atau hewan, wajah di layar, foto wajah, maupun pantulan wajah. Jika unsur manusia diperlukan, tampilkan hanya tangan tanpa identitas atau sudut pandang POV; utamakan objek, lokasi, dan aktivitas tanpa orang. Tampilkan satu adegan pembuka yang menarik, aksi utama yang jelas, dan penutup yang memuaskan. Gunakan gerakan kamera yang halus, pencahayaan sinematik, komposisi yang mudah dibaca di layar ponsel, serta hindari teks acak, logo, dan watermark.</pre>
-<button id="copyPrompt">Salin prompt</button></div>
+<button id="copyPrompt">Salin prompt</button>
+<div class="platform-links" aria-label="Akses generator video AI">
+<a href="https://flow.google.com/" target="_blank" rel="noopener noreferrer">Buka Flow</a>
+<a href="https://gemini.google.com/app" target="_blank" rel="noopener noreferrer">Buka Gemini</a>
+<a href="https://app.runwayml.com/" target="_blank" rel="noopener noreferrer">Buka Runway</a>
+<a href="https://kling.ai/app" target="_blank" rel="noopener noreferrer">Buka Kling AI</a>
+</div>
+<p class="platform-note">Salin prompt terlebih dahulu, lalu buka salah satu layanan dan tempelkan prompt. Login, ketersediaan, dan batas fitur mengikuti masing-masing platform.</p>
+</div>
 <p class="muted" style="margin-top:18px">Foto adalah inspirasi visual. Ide tidak menjamin viral. Foto untuk kategori baru tersedia di dalam aplikasi; foto kategori lainnya dimuat dari Unsplash dan memerlukan internet. Untuk konten faktual, periksa sumber sebelum publikasi.</p>
 </main>
 <footer>IDE KONTEN • PWA • Bisa diinstal dari browser yang mendukung PWA</footer>
-<script src="./ideas.js?v=170"></script>
+<script src="./ideas.js?v=171"></script>
 <script>
 const all=IDEAS.flatMap((group,gi)=>group.ideas.map((name,i)=>({name,cat:group.category,num:gi*10+i+1,photo:group.photo,image:group.image})));
 const $=id=>document.getElementById(id), cards=$('cards'), cat=$('category'), search=$('search');
@@ -109,7 +117,7 @@ $('randomBtn').onclick=()=>chooseIdea(all[Math.floor(Math.random()*all.length)])
 let deferredPrompt;
 window.addEventListener('beforeinstallprompt',event=>{event.preventDefault();deferredPrompt=event;$('installBtn').hidden=false});
 $('installBtn').onclick=async()=>{if(!deferredPrompt)return;deferredPrompt.prompt();await deferredPrompt.userChoice;deferredPrompt=null;$('installBtn').hidden=true};
-if('serviceWorker' in navigator&&(location.protocol==='https:'||location.hostname==='localhost')){navigator.serviceWorker.addEventListener('controllerchange',()=>location.reload(),{once:true});window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js?v=170',{updateViaCache:'none'}).then(registration=>registration.update()).catch(console.error))}
+if('serviceWorker' in navigator&&(location.protocol==='https:'||location.hostname==='localhost')){navigator.serviceWorker.addEventListener('controllerchange',()=>location.reload(),{once:true});window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js?v=171',{updateViaCache:'none'}).then(registration=>registration.update()).catch(console.error))}
 render();
 </script>
 </body>

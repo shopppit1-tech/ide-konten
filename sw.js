@@ -1,5 +1,5 @@
-const CACHE='ide-konten-v6';
-const RELEASE='170';
+const CACHE='ide-konten-v7';
+const RELEASE='171';
 const INDEX_URL=`./index.html?v=${RELEASE}`;
 const IDEAS_URL=`./ideas.js?v=${RELEASE}`;
 const CORE=['./',INDEX_URL,'./manifest.json',IDEAS_URL,'./assets/icon-192.png','./assets/icon-512.png','./assets/idea-food.jpg','./assets/idea-learning.jpg','./assets/idea-travel.jpg'];
