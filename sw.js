@@ -1,4 +1,4 @@
-const CACHE='ide-konten-v4';
+const CACHE='ide-konten-v5';
 const CORE=['./','./index.html','./manifest.json','./ideas.js','./assets/icon-192.png','./assets/icon-512.png','./assets/idea-food.jpg','./assets/idea-learning.jpg','./assets/idea-travel.jpg'];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(CORE)));self.skipWaiting()});
 self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key!==CACHE).map(key=>caches.delete(key)))));self.clients.claim()});

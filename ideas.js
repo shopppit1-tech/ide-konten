@@ -206,5 +206,69 @@ const IDEAS = [
       "Tiga pemandangan indah yang bisa ditemukan dekat rumah"
     ],
     "image": "assets/idea-travel.jpg"
+  },
+  {
+    "category": "Cerita mini interaktif",
+    "ideas": [
+      "Tebak benda di dalam kotak dari suara dan tiga petunjuk",
+      "Pilih pintu A atau B untuk melihat dua akhir cerita berbeda",
+      "Temukan benda yang berubah sebelum hitung mundur selesai",
+      "Susun tiga petunjuk untuk memecahkan misteri kunci yang hilang",
+      "Tebak harga barang sebelum labelnya dibuka",
+      "Penonton memilih satu bahan untuk tantangan kreasi berikutnya",
+      "Tiga pilihan di layar menentukan nasib sebuah tanaman mini",
+      "Temukan perbedaan dua susunan meja dalam lima detik",
+      "Satu komentar terpilih menjadi aturan episode selanjutnya",
+      "Tebak akhir cerita dari bayangan yang muncul di dinding"
+    ],
+    "photo": "photo-1518709268805-4e9042af9f23"
+  },
+  {
+    "category": "Proses nyata dan video memuaskan",
+    "ideas": [
+      "Meja kerja berantakan berubah rapi dalam time-lapse",
+      "Restorasi lampu meja tua dari kusam hingga menyala lagi",
+      "Proses mengemas paket dengan rapi dan minim bahan",
+      "Membuat kerajinan kertas dari potongan sampai menjadi bentuk akhir",
+      "Sepatu kotor dibersihkan lalu dibandingkan sebelum dan sesudah",
+      "Menyusun koleksi benda kecil berdasarkan gradasi warna",
+      "Mengubah kardus bekas menjadi tempat penyimpanan yang rapi",
+      "Menata ulang laci penuh menjadi kompartemen yang mudah dicari",
+      "Membuat miniatur dari bahan bekas dengan tahapan yang jelas",
+      "Membersihkan dan menata sudut kecil rumah hingga terasa lebih lega"
+    ],
+    "photo": "photo-1500530855697-b586d89ba3ee"
+  },
+  {
+    "category": "Tips praktis yang dicari orang",
+    "ideas": [
+      "Cara merapikan kabel charger agar tidak kusut",
+      "Menata bahan dapur berdasarkan tanggal kedaluwarsa",
+      "Membuat daftar belanja mingguan dari menu yang sudah direncanakan",
+      "Cara membandingkan harga per satuan saat berbelanja",
+      "Membersihkan noda air dari meja sesuai jenis materialnya",
+      "Teknik melipat kaus agar hemat ruang di laci",
+      "Menyusun meja belajar supaya barang penting mudah dijangkau",
+      "Membersihkan botol minum sesuai petunjuk bahan dan kebersihannya",
+      "Membuat anggaran sederhana dengan kategori kebutuhan dan pilihan",
+      "Memotret benda kecil dengan cahaya jendela tanpa peralatan mahal"
+    ],
+    "image": "assets/idea-learning.jpg"
+  },
+  {
+    "category": "Nostalgia dan benda jadul",
+    "ideas": [
+      "Tebak bunyi benda lawas: kaset, radio, atau mesin tik",
+      "Membuat ulang permainan kertas yang dulu dimainkan saat sekolah",
+      "Isi kotak pensil zaman dulu dibanding perlengkapan belajar sekarang",
+      "Menyusun meja belajar dengan nuansa era 90-an",
+      "Membuat ulang jajanan masa kecil dengan bahan yang mudah ditemukan",
+      "Barang lawas di rumah yang masih berfungsi setelah bertahun-tahun",
+      "Perubahan telepon dari model putar angka hingga layar sentuh",
+      "Cara menyimpan kenangan dulu dan sekarang: album foto versus digital",
+      "Pilih satu mainan jadul dan tunjukkan cara memainkannya",
+      "Montase suasana pagi di kampung dulu dan kini lewat benda serta bunyi"
+    ],
+    "photo": "photo-1503454537195-1dcabb73ffb9"
   }
 ];
