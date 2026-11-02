@@ -56,7 +56,7 @@ footer{border-top:1px solid var(--line);padding:24px;text-align:center;color:var
 <p class="muted" style="margin-top:18px">Foto adalah inspirasi visual. Ide tidak menjamin viral. Foto untuk kategori baru tersedia di dalam aplikasi; foto kategori lainnya dimuat dari Unsplash dan memerlukan internet. Untuk konten faktual, periksa sumber sebelum publikasi.</p>
 </main>
 <footer>IDE KONTEN • PWA • Bisa diinstal dari browser yang mendukung PWA</footer>
-<script src="./ideas.js"></script>
+<script src="./ideas.js?v=170"></script>
 <script>
 const all=IDEAS.flatMap((group,gi)=>group.ideas.map((name,i)=>({name,cat:group.category,num:gi*10+i+1,photo:group.photo,image:group.image})));
 const $=id=>document.getElementById(id), cards=$('cards'), cat=$('category'), search=$('search');
@@ -109,7 +109,7 @@ $('randomBtn').onclick=()=>chooseIdea(all[Math.floor(Math.random()*all.length)])
 let deferredPrompt;
 window.addEventListener('beforeinstallprompt',event=>{event.preventDefault();deferredPrompt=event;$('installBtn').hidden=false});
 $('installBtn').onclick=async()=>{if(!deferredPrompt)return;deferredPrompt.prompt();await deferredPrompt.userChoice;deferredPrompt=null;$('installBtn').hidden=true};
-if('serviceWorker' in navigator&&(location.protocol==='https:'||location.hostname==='localhost')){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(console.error))}
+if('serviceWorker' in navigator&&(location.protocol==='https:'||location.hostname==='localhost')){navigator.serviceWorker.addEventListener('controllerchange',()=>location.reload(),{once:true});window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js?v=170',{updateViaCache:'none'}).then(registration=>registration.update()).catch(console.error))}
 render();
 </script>
 </body>
