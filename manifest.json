@@ -1,7 +1,7 @@
 {
-  "name": "Viral Content Studio",
-  "short_name": "Viral Studio",
-  "description": "100 ide konten AI dengan foto inspirasi",
+  "name": "IDE KONTEN - Viral Content Studio",
+  "short_name": "IDE KONTEN",
+  "description": "130 ide konten kreatif dengan foto inspirasi dan prompt video siap salin",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",

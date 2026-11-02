@@ -1,22 +1,31 @@
-# Viral Content Studio (PWA)
+# IDE KONTEN — Viral Content Studio (PWA)
 
-Web app berisi 100 ide konten dalam 10 kategori, pencarian, filter, foto inspirasi, tombol ide acak, salin ide, dan prompt produksi AI.
+Aplikasi PWA berisi **130 ide konten dalam 13 kategori**, pencarian, filter, foto inspirasi, ide acak, dan pembuat prompt video yang bisa disalin. Aplikasi ini membantu menyiapkan ide dan prompt; video dibuat menggunakan alat pilihan pengguna, bukan langsung dari aplikasi.
 
-## Upload ke GitHub Pages
-1. Buat repository GitHub baru.
-2. Upload semua isi folder ini (index.html, ideas.js, manifest.json, sw.js, README.md, dan folder assets).
-3. Buka **Settings → Pages**.
-4. Pada **Build and deployment**, pilih **Deploy from a branch**.
-5. Pilih branch `main` dan folder `/ (root)`, lalu Save.
-6. Tunggu proses deployment selesai. Buka URL GitHub Pages yang diberikan.
+## Fitur
+
+- 130 ide yang mencakup hewan, misteri, fakta, transformasi, tantangan, cerita, otomotif, keluarga, berita, serial, kuliner, edukasi, dan wisata.
+- Foto inspirasi untuk setiap kategori. Tiga foto kategori baru disimpan lokal di `assets/idea-food.jpg`, `assets/idea-learning.jpg`, dan `assets/idea-travel.jpg`.
+- Prompt video vertikal 9:16 otomatis mengikuti ide dan kategori yang dipilih.
+- Pencarian ide, filter kategori, ide acak, salin prompt, dan dukungan instalasi PWA.
+- Tidak membutuhkan backend, database, atau API key. Foto untuk kategori lama masih dimuat dari Unsplash dan memerlukan internet.
+
+## Publikasi di GitHub Pages
+
+1. Buka **Settings → Pages** pada repositori.
+2. Pada **Build and deployment**, pilih **Deploy from a branch**.
+3. Pilih branch `main` dan folder `/ (root)`, lalu simpan.
+4. Setelah deployment selesai, buka URL GitHub Pages yang ditampilkan.
 
 ## Instal sebagai aplikasi
+
 - Buka URL GitHub Pages melalui Chrome di Android.
 - Pilih menu ⋮ → **Install app** atau **Tambahkan ke layar utama**.
-- Pada komputer, gunakan ikon install di address bar jika tersedia.
+- Pada komputer, gunakan ikon instal di address bar jika tersedia.
 
 ## Catatan
+
 - PWA dan service worker memerlukan HTTPS atau localhost. GitHub Pages menyediakan HTTPS.
-- Foto inspirasi dimuat dari Unsplash, sehingga foto membutuhkan koneksi internet. Daftar ide dan aset inti disimpan melalui cache setelah kunjungan pertama.
-- Ini adalah aplikasi statis: tidak membutuhkan backend, database, atau API key.
-- Foto merupakan ilustrasi inspirasi kategori, bukan foto spesifik untuk masing-masing dari 100 judul.
+- Ide dan aset foto lokal kategori baru disimpan di cache setelah pemuatan pertama. Foto inspirasi kategori lama dimuat dari Unsplash.
+- Foto merupakan inspirasi suasana, bukan visual khusus untuk tiap judul.
+- Prompt video dapat disalin dan dipakai di alat AI pilihan pengguna. Tidak ada ide yang menjamin viral; periksa fakta sebelum menerbitkan konten faktual.
