@@ -42,6 +42,7 @@ footer{border-top:1px solid var(--line);padding:24px;text-align:center;color:var
 <div class="bar"><input id="search" class="control" placeholder="Cari ide dalam kategori ini..." aria-label="Cari ide konten"><select id="category" class="control" aria-label="Pilih kategori"><option value="" selected disabled>Pilih kategori</option></select><button class="secondary" id="resetBtn">Reset</button></div>
 <div class="muted" id="count" aria-live="polite"></div>
 <div class="grid" id="cards"></div><div class="empty" id="empty">Ide tidak ditemukan. Coba kata kunci lain.</div>
+<div id="categoryContent" hidden>
 <div class="head"><div><h2>Alur produksi video</h2><div class="muted">Dari ide sampai publikasi.</div></div></div>
 <div class="workflow">
 <div class="step"><span class="emoji">💡</span><strong>1. Pilih ide</strong><small>Mulai dari topik yang menarik untuk audiensmu.</small></div>
@@ -60,6 +61,7 @@ footer{border-top:1px solid var(--line);padding:24px;text-align:center;color:var
 <p class="platform-note">Salin prompt terlebih dahulu, lalu buka salah satu layanan dan tempelkan prompt. Login, ketersediaan, dan batas fitur mengikuti masing-masing platform.</p>
 </div>
 <div id="toast" class="toast" role="status" aria-live="polite">Prompt berhasil disalin</div>
+</div>
 </main>
 <script src="./ideas.js?v=171"></script>
 <script>
@@ -116,7 +118,8 @@ async function loadRelevantPhoto(img,item,fallback){
 }
 function render(){
  const q=search.value.trim().toLocaleLowerCase('id'),selectedCategory=cat.value;
- if(!selectedCategory){cards.innerHTML='';$('count').textContent='Pilih kategori untuk melihat ide';$('empty').style.display='none';return}
+ if(!selectedCategory){cards.innerHTML='';$('count').textContent='Pilih kategori untuk melihat ide';$('empty').style.display='none';$('categoryContent').hidden=true;return}
+ $('categoryContent').hidden=false;
  const rows=all.filter(item=>(!selectedCategory||item.cat===selectedCategory)&&(!q||`${item.name} ${item.cat}`.toLocaleLowerCase('id').includes(q)));
  cards.innerHTML='';$('count').textContent=`Menampilkan ${rows.length} dari ${all.length} ide`;$('empty').style.display=rows.length?'none':'block';
  rows.forEach(item=>{
