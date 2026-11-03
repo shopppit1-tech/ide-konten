@@ -65,7 +65,8 @@ footer{border-top:1px solid var(--line);padding:24px;text-align:center;color:var
 </main>
 <script src="./ideas.js?v=171"></script>
 <script>
-const all=IDEAS.flatMap((group,gi)=>group.ideas.map((name,i)=>({name,cat:group.category,num:gi*10+i+1,photo:group.photo,image:group.image})));
+let ideaNumber=0;
+const all=IDEAS.flatMap(group=>group.ideas.map(name=>({name,cat:group.category,num:++ideaNumber,photo:group.photo,image:group.image})));
 const $=id=>document.getElementById(id), cards=$('cards'), cat=$('category'), search=$('search');
 const photoTags={
  'Animasi hewan lucu dan petualangan':'cute animals adventure',
@@ -84,7 +85,8 @@ const photoTags={
  'Cerita mini interaktif':'mystery puzzle interactive game',
  'Proses nyata dan video memuaskan':'craft workshop satisfying process',
  'Tips praktis yang dicari orang':'home organization practical tips',
- 'Nostalgia dan benda jadul':'retro vintage objects'
+ 'Nostalgia dan benda jadul':'retro vintage objects',
+ 'Ide konten tambahan':'everyday life creativity productivity home'
 };
 $('ideaTotal').textContent=all.length;
 $('categoryTotal').textContent=IDEAS.length;

@@ -270,5 +270,41 @@ const IDEAS = [
       "Montase suasana pagi di kampung dulu dan kini lewat benda serta bunyi"
     ],
     "photo": "photo-1503454537195-1dcabb73ffb9"
+  },
+  {
+    "category": "Ide konten tambahan",
+    "ideas": [
+      "Rutinitas pagi sederhana sebelum mulai bekerja",
+      "Cara membuat sudut kerja lebih nyaman dengan barang yang ada",
+      "Tantangan memasak menu dari isi kulkas",
+      "Membandingkan tiga aplikasi catatan untuk mengatur aktivitas",
+      "Eksperimen membuat minuman segar dari buah lokal",
+      "Sehari menggunakan transportasi umum tanpa kendaraan pribadi",
+      "Merapikan satu laci rumah dalam waktu lima menit",
+      "Menguji ketahanan tanaman di tempat dengan cahaya berbeda",
+      "Membuat dekorasi kamar dari kardus bekas",
+      "Cerita di balik benda yang paling sering dipakai setiap hari",
+      "Mencoba hobi baru selama tujuh hari",
+      "Perbandingan belanja mingguan di pasar dan toko modern",
+      "Membuat daftar menu hemat untuk keluarga kecil",
+      "Tips mengambil foto makanan dengan cahaya jendela",
+      "Mengenal suara lingkungan sekitar pada waktu yang berbeda",
+      "Membuat kalender kebiasaan sederhana di kertas",
+      "Uji coba meja tanpa barang selama satu hari",
+      "Cara menyimpan kabel dan charger agar mudah ditemukan",
+      "Membuat hadiah kecil dari bahan yang tersedia di rumah",
+      "Perubahan satu sudut rumah sebelum dan sesudah ditata",
+      "Mencoba resep sarapan dari negara lain dengan bahan lokal",
+      "Membuat video perbandingan ukuran benda sehari-hari",
+      "Tantangan menjelaskan pekerjaan rumit dalam satu menit",
+      "Mencari tiga tempat tenang untuk membaca di sekitar kota",
+      "Membuat papan inspirasi untuk target bulan ini",
+      "Menguji cara berbeda melipat dan menyimpan pakaian",
+      "Membuat cerita pendek hanya dari tiga benda di meja",
+      "Membandingkan suara hujan di tiga tempat berbeda",
+      "Proses membuat daftar belanja tanpa membeli barang tambahan",
+      "Satu hari merekam detail kecil yang biasanya tidak diperhatikan"
+    ],
+    "photo": "photo-1499750310107-5fef28a66643"
   }
 ];
