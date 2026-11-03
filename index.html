@@ -111,8 +111,7 @@ function render(){
   const img=document.createElement('img');img.className='photo';img.loading='lazy';img.alt='Foto inspirasi: '+item.cat;
   const tags=photoTags[item.cat]||item.cat;
   const fallback=item.image||`https://images.unsplash.com/${item.photo}?auto=format&fit=crop&w=720&q=75`;
-  const prompt=`${tags}, ${item.name}, realistic documentary photograph, natural daylight, true-to-life colors, neutral white balance, realistic textures, clear subject, no illustration, no text, no logo, no watermark, no yellow color cast`;
-  img.src=`https://image.pollinations.ai/prompt/${encodeURIComponent(prompt)}?width=720&height=480&seed=${item.num+2026}&nologo=true`;
+  img.src=`https://picsum.photos/seed/${encodeURIComponent('ide-'+item.num+'-'+item.name)}/720/480`;
   img.onerror=()=>{if(img.dataset.fallback){img.style.display='none';return}img.dataset.fallback='1';img.src=fallback};
   const body=document.createElement('div');body.className='cardbody';
   const top=document.createElement('div');top.className='cardtop';
