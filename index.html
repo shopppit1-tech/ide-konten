@@ -102,6 +102,15 @@ function chooseIdea(item){
  $('prompt').textContent=videoPrompt(item);
  $('selectedIdea').scrollIntoView({behavior:'smooth',block:'center'});
 }
+async function loadRelevantPhoto(img,item,fallback){
+ try{
+  const query=`photo ${photoTags[item.cat]||item.cat} ${item.name}`;
+  const api='https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch='+encodeURIComponent(query)+'&gsrnamespace=6&gsrlimit=10&prop=imageinfo&iiprop=url&iiurlwidth=720&format=json&origin=*';
+  const data=await fetch(api).then(response=>response.json());
+  const pages=Object.values(data.query?.pages||{}).filter(page=>page.imageinfo?.[0]?.thumburl);
+  if(pages.length){img.dataset.fallback='';img.src=pages[(item.num-1)%pages.length].imageinfo[0].thumburl}
+ }catch(error){img.src=fallback}
+}
 function render(){
  const q=search.value.trim().toLocaleLowerCase('id'),selectedCategory=cat.value;
  const rows=all.filter(item=>(!selectedCategory||item.cat===selectedCategory)&&(!q||`${item.name} ${item.cat}`.toLocaleLowerCase('id').includes(q)));
@@ -111,8 +120,9 @@ function render(){
   const img=document.createElement('img');img.className='photo';img.loading='lazy';img.alt='Foto inspirasi: '+item.cat;
   const tags=photoTags[item.cat]||item.cat;
   const fallback=item.image||`https://images.unsplash.com/${item.photo}?auto=format&fit=crop&w=720&q=75`;
-  img.src=`https://picsum.photos/seed/${encodeURIComponent('ide-'+item.num+'-'+item.name)}/720/480`;
-  img.onerror=()=>{if(img.dataset.fallback){img.style.display='none';return}img.dataset.fallback='1';img.src=fallback};
+  img.src=fallback;
+  img.onerror=()=>{if(img.dataset.fallback==='1'){img.style.display='none';return}img.dataset.fallback='1';img.src=fallback};
+  loadRelevantPhoto(img,item,fallback);
   const body=document.createElement('div');body.className='cardbody';
   const top=document.createElement('div');top.className='cardtop';
   const number=document.createElement('span');number.className='num';number.textContent='IDE #'+String(item.num).padStart(3,'0');
