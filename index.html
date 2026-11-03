@@ -104,11 +104,14 @@ function chooseIdea(item){
 }
 async function loadRelevantPhoto(img,item,fallback){
  try{
-  const query=`photo ${photoTags[item.cat]||item.cat} ${item.name}`;
-  const api='https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch='+encodeURIComponent(query)+'&gsrnamespace=6&gsrlimit=10&prop=imageinfo&iiprop=url&iiurlwidth=720&format=json&origin=*';
-  const data=await fetch(api).then(response=>response.json());
-  const pages=Object.values(data.query?.pages||{}).filter(page=>page.imageinfo?.[0]?.thumburl);
-  if(pages.length){img.dataset.fallback='';img.src=pages[(item.num-1)%pages.length].imageinfo[0].thumburl}
+  const tags=photoTags[item.cat]||item.cat;
+  const queries=[`${item.name} ${tags}`,tags];
+  for(const query of queries){
+   const api='https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch='+encodeURIComponent(query)+'&gsrnamespace=6&gsrlimit=10&prop=imageinfo&iiprop=url&iiurlwidth=720&format=json&origin=*';
+   const data=await fetch(api).then(response=>response.json());
+   const pages=Object.values(data.query?.pages||{}).filter(page=>page.imageinfo?.[0]?.thumburl);
+   if(pages.length){img.dataset.fallback='';img.src=pages[(item.num-1)%pages.length].imageinfo[0].thumburl;return}
+  }
  }catch(error){img.src=fallback}
 }
 function render(){
