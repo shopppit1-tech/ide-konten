@@ -65,6 +65,25 @@ footer{border-top:1px solid var(--line);padding:24px;text-align:center;color:var
 <script>
 const all=IDEAS.flatMap((group,gi)=>group.ideas.map((name,i)=>({name,cat:group.category,num:gi*10+i+1,photo:group.photo,image:group.image})));
 const $=id=>document.getElementById(id), cards=$('cards'), cat=$('category'), search=$('search');
+const photoTags={
+ 'Animasi hewan lucu dan petualangan':'cute animals adventure',
+ 'Cerita misteri dan horor':'mystery dark atmosphere',
+ 'Fakta unik yang bikin penasaran':'science discovery space',
+ 'Transformasi AI dan dunia imajinasi':'futuristic fantasy architecture',
+ 'Eksperimen dan tantangan':'experiment challenge outdoors',
+ 'Cerita menyentuh hati':'heartwarming animals friendship',
+ 'Otomotif dan balapan':'racing cars vehicles',
+ 'Anak dan keluarga':'children learning family',
+ 'Berita dan kejadian unik':'technology world news',
+ 'Serial yang bikin penonton menunggu':'cinematic fantasy adventure',
+ 'Kuliner dan resep praktis':'food cooking recipe',
+ 'Belajar dan pengetahuan ringan':'education books science',
+ 'Wisata dan sudut Indonesia':'Indonesia travel landscape',
+ 'Cerita mini interaktif':'mystery puzzle interactive game',
+ 'Proses nyata dan video memuaskan':'craft workshop satisfying process',
+ 'Tips praktis yang dicari orang':'home organization practical tips',
+ 'Nostalgia dan benda jadul':'retro vintage objects'
+};
 $('ideaTotal').textContent=all.length;
 $('categoryTotal').textContent=IDEAS.length;
 IDEAS.forEach(group=>{const option=document.createElement('option');option.value=group.category;option.textContent=group.category;cat.appendChild(option)});
@@ -90,8 +109,10 @@ function render(){
  rows.forEach(item=>{
   const card=document.createElement('article');card.className='card';
   const img=document.createElement('img');img.className='photo';img.loading='lazy';img.alt='Foto inspirasi: '+item.cat;
-  img.src=item.image||`https://images.unsplash.com/${item.photo}?auto=format&fit=crop&w=720&q=75`;
-  img.onerror=()=>{img.style.display='none'};
+  const tags=photoTags[item.cat]||item.cat;
+  const fallback=item.image||`https://images.unsplash.com/${item.photo}?auto=format&fit=crop&w=720&q=75`;
+  img.src=`https://loremflickr.com/720/480/${encodeURIComponent(tags+','+item.name)}?lock=${item.num}`;
+  img.onerror=()=>{if(img.dataset.fallback){img.style.display='none';return}img.dataset.fallback='1';img.src=fallback};
   const body=document.createElement('div');body.className='cardbody';
   const top=document.createElement('div');top.className='cardtop';
   const number=document.createElement('span');number.className='num';number.textContent='IDE #'+String(item.num).padStart(3,'0');
