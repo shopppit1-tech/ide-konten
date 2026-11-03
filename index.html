@@ -39,7 +39,7 @@ footer{border-top:1px solid var(--line);padding:24px;text-align:center;color:var
 </div></header>
 <main class="wrap">
 <div class="head"><div><h2>Jelajahi ide konten</h2><div class="muted">Pilih ide untuk membuat prompt. Foto membantu membayangkan suasana visual.</div></div><button class="secondary" id="randomBtn">Ide acak</button></div>
-<div class="bar"><input id="search" class="control" placeholder="Cari ide: resep, belajar, wisata..." aria-label="Cari ide konten"><select id="category" class="control" aria-label="Filter kategori"><option value="">Semua kategori</option></select><button class="secondary" id="resetBtn">Reset</button></div>
+<div class="bar"><input id="search" class="control" placeholder="Cari ide dalam kategori ini..." aria-label="Cari ide konten"><select id="category" class="control" aria-label="Pilih kategori"></select><button class="secondary" id="resetBtn">Reset</button></div>
 <div class="muted" id="count" aria-live="polite"></div>
 <div class="grid" id="cards"></div><div class="empty" id="empty">Ide tidak ditemukan. Coba kata kunci lain.</div>
 <div class="head"><div><h2>Alur produksi video</h2><div class="muted">Dari ide sampai publikasi.</div></div></div>
@@ -87,6 +87,7 @@ const photoTags={
 $('ideaTotal').textContent=all.length;
 $('categoryTotal').textContent=IDEAS.length;
 IDEAS.forEach(group=>{const option=document.createElement('option');option.value=group.category;option.textContent=group.category;cat.appendChild(option)});
+cat.value=IDEAS[0].category;
 function videoPrompt(item){
  const direction=item.cat.includes('Kuliner')
   ? 'Tampilkan detail bahan dan proses memasak dengan close-up yang menggugah selera, cahaya alami hangat, serta tekstur makanan yang terlihat jelas.'
@@ -144,7 +145,7 @@ function showToast(){const toast=$('toast');toast.classList.add('show');clearTim
 function fallbackCopy(text){const area=document.createElement('textarea');area.value=text;document.body.append(area);area.select();document.execCommand('copy');area.remove();showToast()}
 $('copyPrompt').onclick=()=>copy($('prompt').textContent);
 search.oninput=render;cat.onchange=render;
-$('resetBtn').onclick=()=>{search.value='';cat.value='';render()};
+$('resetBtn').onclick=()=>{search.value='';render()};
 $('randomBtn').onclick=()=>chooseIdea(all[Math.floor(Math.random()*all.length)]);
 let deferredPrompt;
 window.addEventListener('beforeinstallprompt',event=>{event.preventDefault();deferredPrompt=event;$('installBtn').hidden=false});
