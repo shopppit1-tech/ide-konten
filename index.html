@@ -23,6 +23,7 @@ button{border:0;border-radius:10px;padding:10px 14px;background:var(--purple);co
 .workflow{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.step{padding:14px;border:1px solid var(--line);background:var(--panel);border-radius:13px}.step strong{display:block;margin:5px 0}.step small{color:var(--muted)}.step .emoji{font-size:22px}
 .panel{border:1px solid var(--line);background:var(--panel);padding:17px;border-radius:14px}.panel pre{white-space:pre-wrap;word-break:break-word;background:#09111e;border-radius:10px;padding:13px;color:#dce7fa;font:13px/1.6 ui-monospace,monospace;max-height:520px;overflow:auto}
 .platform-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:11px}.platform-links a{display:inline-flex;align-items:center;padding:8px 12px;border:1px solid #414f6e;background:#1a2840;color:#eaf0ff;border-radius:10px;text-decoration:none;font-size:13px;font-weight:700}.platform-links a:hover{border-color:var(--purple);background:#252d4d}.platform-note{margin:9px 0 0;color:var(--muted);font-size:12px}.empty{display:none;text-align:center;border:1px dashed var(--line);padding:25px;border-radius:12px;color:var(--muted)}
+.toast{position:fixed;left:50%;bottom:24px;z-index:10;transform:translate(-50%,16px);padding:11px 16px;border:1px solid #5e6e91;border-radius:12px;background:#18253a;color:var(--text);box-shadow:0 8px 28px #0008;font-weight:700;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s}.toast.show{opacity:1;transform:translate(-50%,0)}
 footer{border-top:1px solid var(--line);padding:24px;text-align:center;color:var(--muted);font-size:12px}
 @media(max-width:800px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.workflow{grid-template-columns:repeat(2,1fr)}.bar{grid-template-columns:1fr 1fr}.bar input{grid-column:1/-1}}
 @media(max-width:520px){.grid{grid-template-columns:1fr 1fr;gap:9px}.photo{height:125px}.cardbody{padding:10px}.card h3{font-size:14px}.cat{font-size:9px}.bar{grid-template-columns:1fr}.bar input{grid-column:auto}.workflow{grid-template-columns:1fr 1fr}.stats{gap:6px}.stat{min-width:0;padding:9px 12px}}
@@ -61,6 +62,7 @@ footer{border-top:1px solid var(--line);padding:24px;text-align:center;color:var
 </div>
 <p class="platform-note">Salin prompt terlebih dahulu, lalu buka salah satu layanan dan tempelkan prompt. Login, ketersediaan, dan batas fitur mengikuti masing-masing platform.</p>
 </div>
+<div id="toast" class="toast" role="status" aria-live="polite">Prompt berhasil disalin</div>
 <p class="muted" style="margin-top:18px">Foto adalah inspirasi visual. Ide tidak menjamin viral. Foto untuk kategori baru tersedia di dalam aplikasi; foto kategori lainnya dimuat dari Unsplash dan memerlukan internet. Untuk konten faktual, periksa sumber sebelum publikasi.</p>
 </main>
 <footer>IDE KONTEN • PWA • Bisa diinstal dari browser yang mendukung PWA</footer>
@@ -106,10 +108,11 @@ function render(){
  });
 }
 function copy(text){
- if(navigator.clipboard&&isSecureContext){navigator.clipboard.writeText(text).then(()=>alert('Prompt berhasil disalin')).catch(()=>fallbackCopy(text))}
+ if(navigator.clipboard&&isSecureContext){navigator.clipboard.writeText(text).then(showToast).catch(()=>fallbackCopy(text))}
  else fallbackCopy(text);
 }
-function fallbackCopy(text){const area=document.createElement('textarea');area.value=text;document.body.append(area);area.select();document.execCommand('copy');area.remove();alert('Prompt berhasil disalin')}
+function showToast(){const toast=$('toast');toast.classList.add('show');clearTimeout(showToast.timer);showToast.timer=setTimeout(()=>toast.classList.remove('show'),2200)}
+function fallbackCopy(text){const area=document.createElement('textarea');area.value=text;document.body.append(area);area.select();document.execCommand('copy');area.remove();showToast()}
 $('copyPrompt').onclick=()=>copy($('prompt').textContent);
 search.oninput=render;cat.onchange=render;
 $('resetBtn').onclick=()=>{search.value='';cat.value='';render()};
