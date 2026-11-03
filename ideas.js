@@ -272,39 +272,51 @@ const IDEAS = [
     "photo": "photo-1503454537195-1dcabb73ffb9"
   },
   {
-    "category": "Ide konten tambahan",
+    "category": "AI praktis dan alat kreator",
     "ideas": [
-      "Rutinitas pagi sederhana sebelum mulai bekerja",
-      "Cara membuat sudut kerja lebih nyaman dengan barang yang ada",
-      "Tantangan memasak menu dari isi kulkas",
-      "Membandingkan tiga aplikasi catatan untuk mengatur aktivitas",
-      "Eksperimen membuat minuman segar dari buah lokal",
-      "Sehari menggunakan transportasi umum tanpa kendaraan pribadi",
-      "Merapikan satu laci rumah dalam waktu lima menit",
-      "Menguji ketahanan tanaman di tempat dengan cahaya berbeda",
-      "Membuat dekorasi kamar dari kardus bekas",
-      "Cerita di balik benda yang paling sering dipakai setiap hari",
-      "Mencoba hobi baru selama tujuh hari",
-      "Perbandingan belanja mingguan di pasar dan toko modern",
-      "Membuat daftar menu hemat untuk keluarga kecil",
-      "Tips mengambil foto makanan dengan cahaya jendela",
-      "Mengenal suara lingkungan sekitar pada waktu yang berbeda",
-      "Membuat kalender kebiasaan sederhana di kertas",
-      "Uji coba meja tanpa barang selama satu hari",
-      "Cara menyimpan kabel dan charger agar mudah ditemukan",
-      "Membuat hadiah kecil dari bahan yang tersedia di rumah",
-      "Perubahan satu sudut rumah sebelum dan sesudah ditata",
-      "Mencoba resep sarapan dari negara lain dengan bahan lokal",
-      "Membuat video perbandingan ukuran benda sehari-hari",
-      "Tantangan menjelaskan pekerjaan rumit dalam satu menit",
-      "Mencari tiga tempat tenang untuk membaca di sekitar kota",
-      "Membuat papan inspirasi untuk target bulan ini",
-      "Menguji cara berbeda melipat dan menyimpan pakaian",
-      "Membuat cerita pendek hanya dari tiga benda di meja",
-      "Membandingkan suara hujan di tiga tempat berbeda",
-      "Proses membuat daftar belanja tanpa membeli barang tambahan",
-      "Satu hari merekam detail kecil yang biasanya tidak diperhatikan"
+      "Membuat tiga ide video dengan satu kalimat menggunakan AI",
+      "Mengubah catatan berantakan menjadi naskah pendek yang rapi",
+      "Menguji lima prompt AI untuk membuat judul yang menarik",
+      "Membuat thumbnail sederhana dari foto biasa tanpa desain rumit",
+      "Perbandingan hasil voice-over AI dengan suara rekaman sendiri",
+      "Mengubah satu video panjang menjadi tiga konsep Shorts",
+      "Mencoba AI untuk merangkum artikel menjadi skrip 30 detik",
+      "Membuat kalender konten mingguan dengan bantuan AI",
+      "Eksperimen mengubah foto makanan menjadi konsep iklan pendek",
+      "Kesalahan prompt AI yang membuat hasil video tidak sesuai"
     ],
-    "photo": "photo-1499750310107-5fef28a66643"
+    "photo": "photo-1677442136019-21780ecad995"
+  },
+  {
+    "category": "FoodTok dan ASMR makanan",
+    "ideas": [
+      "Membuat camilan renyah dari satu bahan sederhana",
+      "Uji rasa tiga sambal dengan tingkat pedas berbeda",
+      "Membuat minuman dingin tiga warna tanpa pewarna buatan",
+      "ASMR memotong buah dengan tekstur dan suara berbeda",
+      "Tantangan memasak menu viral dengan bujet terbatas",
+      "Membandingkan tiga cara membuat telur agar hasilnya lembut",
+      "Membuat dessert dalam gelas dari bahan yang tersedia di rumah",
+      "Jajanan kaki lima versi rumahan dalam waktu 15 menit",
+      "Menguji resep lama keluarga dengan teknik memasak baru",
+      "Plating makanan sederhana agar terlihat seperti menu restoran"
+    ],
+    "photo": "photo-1547592180-85f173990554"
+  },
+  {
+    "category": "Challenge, POV, dan transformasi",
+    "ideas": [
+      "POV: kamu harus memilih satu dari tiga pintu dengan akhir berbeda",
+      "Tantangan menebak angka teman hanya dengan lima pertanyaan",
+      "Transformasi sudut kamar dari berantakan menjadi nyaman",
+      "Mencoba satu kebiasaan baru selama tujuh hari",
+      "Tantangan membuat hadiah dari barang yang ada di meja",
+      "POV: pelanggan pertama datang saat toko baru dibuka",
+      "Menguji apakah tiga life hack rumah tangga benar-benar bekerja",
+      "Tantangan mengingat lima benda setelah melihatnya selama 10 detik",
+      "Transformasi pakaian dengan satu aksesori sederhana",
+      "Membuat cerita lucu dari tiga benda yang dipilih penonton"
+    ],
+    "photo": "photo-1516321318423-f06f85e504b3"
   }
 ];
