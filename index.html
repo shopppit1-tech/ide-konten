@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#111827">
-<meta name="description" content="170 ide konten kreatif dalam 17 kategori, lengkap dengan foto inspirasi dan prompt video siap salin.">
+<meta name="description" content="200 ide konten kreatif dalam 20 kategori, lengkap dengan foto inspirasi dan prompt video siap salin.">
 <link rel="manifest" href="./manifest.json">
 <link rel="icon" href="./assets/icon-192.png">
 <link rel="apple-touch-icon" href="./assets/icon-192.png">
@@ -25,17 +25,25 @@ button{border:0;border-radius:10px;padding:10px 14px;background:var(--purple);co
 .platform-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:11px}.platform-links a{display:inline-flex;align-items:center;padding:8px 12px;border:1px solid #414f6e;background:#1a2840;color:#eaf0ff;border-radius:10px;text-decoration:none;font-size:13px;font-weight:700}.platform-links a:hover{border-color:var(--purple);background:#252d4d}.platform-note{margin:9px 0 0;color:var(--muted);font-size:12px}.empty{display:none;text-align:center;border:1px dashed var(--line);padding:25px;border-radius:12px;color:var(--muted)}
 .toast{position:fixed;left:50%;bottom:24px;z-index:10;transform:translate(-50%,16px);padding:11px 16px;border:1px solid #5e6e91;border-radius:12px;background:#18253a;color:var(--text);box-shadow:0 8px 28px #0008;font-weight:700;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s}.toast.show{opacity:1;transform:translate(-50%,0)}
 #categoryContent[hidden]{display:none!important}
+.hero{position:relative;min-height:430px;display:flex;align-items:flex-end;overflow:hidden;background:#0a1020;border-bottom:1px solid #ffffff18}.hero-slides{position:absolute;inset:0}.hero-slide{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;animation:heroFade 20s infinite;filter:saturate(.9) contrast(1.05)}.hero-slide:nth-child(2){animation-delay:5s}.hero-slide:nth-child(3){animation-delay:10s}.hero-slide:nth-child(4){animation-delay:15s}.hero-slides:after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,#080b1480 0%,#080b1440 35%,#0b1220 100%)}@keyframes heroFade{0%,4%{opacity:0}8%,25%{opacity:1}29%,100%{opacity:0}}.hero-content{position:relative;z-index:1;width:100%;padding:46px 16px 28px}.hero-kicker{color:var(--mint);font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase}.hero h1{font-size:clamp(42px,11vw,76px);line-height:.98;letter-spacing:-2px;margin:12px 0 14px;text-shadow:0 3px 22px #0008}.hero .intro{max-width:610px;margin:0;color:#d5dced;font-size:15px}.hero .stats{justify-content:flex-start;margin-top:22px;gap:8px}.hero .stat{min-width:92px;padding:9px 12px;border:1px solid #ffffff2a;background:#08101dcc;backdrop-filter:blur(12px);border-radius:12px}.hero .stat b{font-size:20px}.hero .stat span{color:#bcc6db}.hero .install{margin-top:16px}main{padding-top:24px}.bar{padding:10px;border:1px solid #ffffff12;border-radius:15px;background:#ffffff05}.control{background:#111b2c;border-color:#334461}.grid{gap:12px}.card{border-color:#ffffff16;box-shadow:0 10px 28px #0002;transition:transform .2s,border-color .2s,box-shadow .2s}.card:hover{transform:translateY(-3px);border-color:#8175ff88;box-shadow:0 14px 35px #0004}.photo{height:180px}.cardbody{padding:15px}.card h3{font-weight:700;letter-spacing:-.2px}.cat{background:#173f3b;color:#8ff0d0}.secondary{border:1px solid #ffffff12}.empty{background:#111b2c}
+@media(max-width:520px){.hero{min-height:500px}.hero-content{padding:52px 16px 24px}.hero h1{font-size:52px}.hero .intro{font-size:14px}.hero .stats{gap:6px}.hero .stat{min-width:0;flex:1;padding:9px 8px}.hero .stat b{font-size:19px}.hero .stat span{font-size:11px}.grid{grid-template-columns:1fr;gap:12px}.photo{height:190px}.cardbody{padding:14px}.card h3{font-size:16px}.bar{grid-template-columns:1fr;padding:8px}.bar input{grid-column:auto}.main{padding-top:18px}}
 footer{border-top:1px solid var(--line);padding:24px;text-align:center;color:var(--muted);font-size:12px}
 @media(max-width:800px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.workflow{grid-template-columns:repeat(2,1fr)}.bar{grid-template-columns:1fr 1fr}.bar input{grid-column:1/-1}}
 @media(max-width:520px){.grid{grid-template-columns:1fr 1fr;gap:9px}.photo{height:125px}.cardbody{padding:10px}.card h3{font-size:14px}.cat{font-size:9px}.bar{grid-template-columns:1fr}.bar input{grid-column:auto}.workflow{grid-template-columns:1fr 1fr}.stats{gap:6px}.stat{min-width:0;padding:9px 12px}}
 </style>
 </head>
 <body>
-<header><div class="wrap">
-<h1>IDE KONTEN</h1>
-<p class="intro">Kumpulan ide konten untuk Shorts, TikTok, dan Reels. Pilih ide, lihat foto inspirasi, lalu salin prompt video yang siap dikembangkan.</p>
-<div class="stats"><div class="stat"><b id="ideaTotal">170</b><span>Ide konten</span></div><div class="stat"><b id="categoryTotal">17</b><span>Kategori</span></div><div class="stat"><b>Install</b><span>Di HP & PC</span></div></div>
-<div style="margin-top:17px"><button class="install" id="installBtn" hidden>＋ Instal aplikasi</button></div>
+<header class="hero"><div class="hero-slides" aria-hidden="true">
+<img class="hero-slide" src="./assets/idea-food.jpg" alt="">
+<img class="hero-slide" src="./assets/idea-learning.jpg" alt="">
+<img class="hero-slide" src="./assets/idea-travel.jpg" alt="">
+<img class="hero-slide" src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1400&q=82" alt="">
+</div><div class="hero-content wrap">
+<div class="hero-kicker">CONTENT LAB • INSPIRASI HARI INI</div>
+<h1>IDE<br>KONTEN</h1>
+<p class="intro">Kumpulan ide untuk Shorts, TikTok, dan Reels. Pilih satu kategori, temukan konsep yang kuat, lalu buat prompt siap pakai.</p>
+<div class="stats"><div class="stat"><b id="ideaTotal">200</b><span>Ide konten</span></div><div class="stat"><b id="categoryTotal">20</b><span>Kategori</span></div><div class="stat"><b>15s</b><span>Format cepat</span></div></div>
+<div><button class="install" id="installBtn" hidden>＋ Instal aplikasi</button></div>
 </div></header>
 <main class="wrap">
 <div class="head"><div><h2>Jelajahi ide konten</h2><div class="muted">Pilih ide untuk membuat prompt. Foto membantu membayangkan suasana visual.</div></div><button class="secondary" id="randomBtn">Ide acak</button></div>
