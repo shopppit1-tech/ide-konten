@@ -283,7 +283,8 @@ const IDEAS = [
       "Mencoba AI untuk merangkum artikel menjadi skrip 30 detik",
       "Membuat kalender konten mingguan dengan bantuan AI",
       "Eksperimen mengubah foto makanan menjadi konsep iklan pendek",
-      "Kesalahan prompt AI yang membuat hasil video tidak sesuai"
+      "Kesalahan prompt AI yang membuat hasil video tidak sesuai",
+      "Ubah pertanyaan 'saham ini bagus?' menjadi prompt AI yang memisahkan fakta, asumsi, risiko, dan data yang perlu diverifikasi"
     ],
     "photo": "photo-1677442136019-21780ecad995"
   },

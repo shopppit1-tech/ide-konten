@@ -1,10 +1,10 @@
 # IDE KONTEN — Viral Content Studio (PWA)
 
-Aplikasi PWA berisi **170 ide konten dalam 17 kategori**, pencarian, filter, foto inspirasi, ide acak, dan pembuat prompt video yang bisa disalin. Aplikasi ini membantu menyiapkan ide dan prompt; video dibuat menggunakan alat pilihan pengguna, bukan langsung dari aplikasi.
+Aplikasi PWA berisi **201 ide konten dalam 20 kategori**, pencarian, filter, foto inspirasi, ide acak, dan pembuat prompt video yang bisa disalin. Aplikasi ini membantu menyiapkan ide dan prompt; video dibuat menggunakan alat pilihan pengguna, bukan langsung dari aplikasi.
 
 ## Fitur
 
-- 170 ide yang mencakup hewan, misteri, fakta, transformasi, tantangan, cerita, otomotif, keluarga, berita, serial, kuliner, edukasi, wisata, cerita interaktif, proses memuaskan, tips praktis, dan nostalgia.
+- 201 ide yang mencakup hewan, misteri, fakta, transformasi, tantangan, cerita, otomotif, keluarga, berita, serial, kuliner, edukasi, wisata, cerita interaktif, proses memuaskan, tips praktis, nostalgia, AI praktis, FoodTok, serta challenge dan transformasi.
 - Foto inspirasi untuk setiap kategori. Tiga foto kategori baru disimpan lokal di `assets/idea-food.jpg`, `assets/idea-learning.jpg`, dan `assets/idea-travel.jpg`.
 - Prompt video vertikal 9:16 otomatis mengikuti ide dan kategori yang dipilih.
 - Pencarian ide, filter kategori, ide acak, salin prompt, dan dukungan instalasi PWA.
